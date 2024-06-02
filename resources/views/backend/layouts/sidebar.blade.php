@@ -15,12 +15,36 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="{{ route('admin-show') }}">
               <i class="bi bi-circle"></i><span>All Users</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('division-show') }}">
+              <i class="bi bi-circle"></i><span>All Devisions</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('rule-show') }}">
+              <i class="bi bi-circle"></i><span>All Rules</span>
             </a>
           </li>
         </ul>
       </li><!-- End User Nav -->
+
+    {{--<li class="nav-heading"><p><b>All Division Details</b></p></li>
+       <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#all-div-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>All Division Details</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="all-div-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>All Division</span>
+            </a>
+          </li>
+        </ul>
+      </li> --}}<!-- End Devision Nav -->
 
       <li class="nav-heading"><p><b>Aquaculture</b></p></li>
       <li class="nav-item">
@@ -186,20 +210,6 @@
           <li>
             <a href="components-alerts.html">
               <i class="bi bi-circle"></i><span>Change Password</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End User Motipur Nav -->
-
-      <li class="nav-heading"><p><b>All Division Details</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#all-div-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>All Division Details</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="all-div-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>All Reports</span>
             </a>
           </li>
         </ul>

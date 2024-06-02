@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Dashboard - @yield('title')</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-  <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ asset('assets/img/cife-logo.png') }}" rel="icon">
+  <link href="{{ asset('assets/img/cife-logo.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -21,6 +21,10 @@
   <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/css/w3.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+
+<!-- Tostr css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
   <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap5.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
@@ -36,6 +40,8 @@
         color: #fff;
     }
   </style>
+
+  @stack('style')
 
 </head>
 
@@ -62,7 +68,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="{{ asset('assets/img/cife-logo.png') }}" alt="Profile" class="rounded-circle">
             <span class=" d-md-block dropdown-toggle ps-2"></span> {{-- K. Anderson --}}
           </a><!-- End Profile Iamge Icon -->
 
@@ -94,11 +100,11 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>@yield('head')</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
+          <li class="breadcrumb-item active">@yield('head')</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -127,6 +133,9 @@
   <script src="{{ asset('assets/js/dataTables.js') }}"></script>
   <script src="{{ asset('assets/js/dataTables.bootstrap5.js') }}"></script>
 
+<!-- toastr.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
   <script src="{{ asset('assets/js/main.js') }}"></script>
   {{-- <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -139,6 +148,35 @@
 
   <!-- Template Main JS File -->
   {{-- <script src="assets/js/main.js"></script> --}}
+
+  <script>
+    @if (Session::has('message'))
+        var type = "{{ Session::get('alert-type', 'info') }}";
+        switch (type) {
+            case 'info':
+                toastr.info("{{ Session::get('message') }}");
+                break;
+
+            case 'success':
+                toastr.success("{{ Session::get('message') }}");
+                break;
+
+            case 'waringing':
+                toastr.waringing("{{ Session::get('message') }}");
+                break;
+
+            case 'error':
+                toastr.error("{{ Session::get('message') }}");
+                break;
+        }
+    @endif
+
+    toastr.options = {
+        "progressBar": true,
+    }
+</script>
+
+@stack('script')
 
 </body>
 
