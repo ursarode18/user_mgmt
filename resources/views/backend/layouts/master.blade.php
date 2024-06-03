@@ -22,11 +22,13 @@
   <link href="{{ asset('assets/css/w3.css') }}" rel="stylesheet">
   <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
 
-<!-- Tostr css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
 
   <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap5.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+<!-- Tostr css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
   <style>
     .sidebar-nav .nav-content a{
@@ -109,6 +111,8 @@
       </nav>
     </div><!-- End Page Title -->
 
+
+
     @yield('main-content')
 
   </main><!-- End #main -->
@@ -128,13 +132,12 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="{{ asset('assets/js/jquery-3.7.1.slim.min.js') }}"></script>
+  <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
   <script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
   <script src="{{ asset('assets/js/dataTables.js') }}"></script>
   <script src="{{ asset('assets/js/dataTables.bootstrap5.js') }}"></script>
 
-<!-- toastr.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
   <script src="{{ asset('assets/js/main.js') }}"></script>
   {{-- <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
@@ -149,32 +152,20 @@
   <!-- Template Main JS File -->
   {{-- <script src="assets/js/main.js"></script> --}}
 
-  <script>
-    @if (Session::has('message'))
-        var type = "{{ Session::get('alert-type', 'info') }}";
-        switch (type) {
-            case 'info':
-                toastr.info("{{ Session::get('message') }}");
-                break;
+<!-- toastr.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-            case 'success':
-                toastr.success("{{ Session::get('message') }}");
-                break;
+  @if(Session::has('msg'))
 
-            case 'waringing':
-                toastr.waringing("{{ Session::get('message') }}");
-                break;
-
-            case 'error':
-                toastr.error("{{ Session::get('message') }}");
-                break;
+    <script>
+        toastr.options = {
+            'progressBar' : true,
+            'closeButton' : true,
         }
-    @endif
+         toastr.success("{{ Session::get('msg') }}",'Success!');
+    </script>
 
-    toastr.options = {
-        "progressBar": true,
-    }
-</script>
+  @endif
 
 @stack('script')
 

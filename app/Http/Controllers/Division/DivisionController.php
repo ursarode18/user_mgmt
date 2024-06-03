@@ -49,13 +49,12 @@ class DivisionController extends Controller
 
         $data->save();
 
-        $popup = array(
+       /*  $popup = array(
             'message' => 'Division name added successfully !!',
             'alert-type' => 'success',
-        );
+        ); */
 
-        return redirect()->route('division-show')->with($popup);
-
+        return redirect()->route('division-show')->with('msg','Division name added successfully !!');
     }
 
     /**
@@ -77,7 +76,9 @@ class DivisionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Division::findOrFail($id);
+
+        return view('backend.division-mgmt.division-edit',compact('data'));
     }
 
     /**
@@ -89,7 +90,26 @@ class DivisionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Division::findOrFail($id);
+
+
+        $request->validate([
+            'division_name' => 'required',
+        ],[
+            'division_name.required' => 'Division name field is required. !!',
+        ]);
+
+        $data->division_name = $request->division_name;
+        $data->status = $request->status;
+
+        $data->save();
+
+       /*  $popup = array(
+            'message' => 'Division name added successfully !!',
+            'alert-type' => 'success',
+        ); */
+
+        return redirect()->route('division-show')->with('msg','Division name updated successfully !!');
     }
 
     /**
@@ -100,6 +120,12 @@ class DivisionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Division::findOrFail($id);
+
+        if($data){
+           $data->delete();
+
+            return redirect()->route('division-show')->with('msg','Division name deleted successfully !!');
+        }
     }
 }

@@ -47,7 +47,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('create-division','create')->name('division-create');
             Route::post('store-division','store')->name('division-store');
             Route::get('edit-division/{id}','edit')->name('division-edit');
-            Route::post('del-division/{id}','destroy')->name('division-del');
+            Route::post('upd-division/{id}','update')->name('division-upd');
+            Route::get('del-division/{id}','destroy')->name('division-del');
         });
     });
 

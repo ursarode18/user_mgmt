@@ -24,11 +24,7 @@
               <i class="bi bi-circle"></i><span>All Devisions</span>
             </a>
           </li>
-          <li>
-            <a href="{{ route('rule-show') }}">
-              <i class="bi bi-circle"></i><span>All Rules</span>
-            </a>
-          </li>
+
         </ul>
       </li><!-- End User Nav -->
 
@@ -216,15 +212,20 @@
       </li><!-- End User Motipur Nav -->
 
 
-      <li class="nav-heading"><p><b>Role Management</b></p></li>
+      <li class="nav-heading"><p><b>Special User</b></p></li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#user-role-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>User Role</span><i class="bi bi-chevron-down ms-auto"></i>
+          <i class="bi bi-menu-button-wide"></i><span>Special User</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="user-role-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Add Role</span>
+              <i class="bi bi-circle"></i><span>All Details</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>All Report</span>
             </a>
           </li>
         </ul>
