@@ -9,6 +9,7 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
+      @if (Auth::User()->admin == 1)
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>User Details</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -27,6 +28,8 @@
 
         </ul>
       </li><!-- End User Nav -->
+      @endif
+
 
     {{--<li class="nav-heading"><p><b>All Division Details</b></p></li>
        <li class="nav-item">
@@ -42,89 +45,103 @@
         </ul>
       </li> --}}<!-- End Devision Nav -->
 
-      <li class="nav-heading"><p><b>Aquaculture</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#aqua-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Aquaculture</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="aqua-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>All Users</span>
+      @if (Auth::User()->aqua == 1)
+        <li class="nav-heading"><p><b>Aquaculture</b></p></li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#aqua-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>Aquaculture</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-        </ul>
-      </li><!-- End Aqua Nav -->
+            <ul id="aqua-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>All Users</span>
+                </a>
+            </li>
+            </ul>
+        </li><!-- End Aqua Nav -->
+      @endif
 
-      <li class="nav-heading"><p><b>FRPHM</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#FRPHM-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>FRPHM</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="FRPHM-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>FRPHM</span>
+      @if (Auth::User()->frhphm == 1)
+        <li class="nav-heading"><p><b>FRPHM</b></p></li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#FRPHM-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>FRPHM</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-        </ul>
-      </li><!-- End FRPHM Nav -->
+            <ul id="FRPHM-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>FRPHM</span>
+                </a>
+            </li>
+            </ul>
+        </li><!-- End FRPHM Nav -->
+      @endif
 
-      <li class="nav-heading"><p><b>FNBP</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#FNBP-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>FNBP</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="FNBP-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>FNBP</span>
+      @if (Auth::User()->fnbp == 1)
+        <li class="nav-heading"><p><b>FNBP</b></p></li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#FNBP-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>FNBP</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-        </ul>
-      </li><!-- End FNBP Nav -->
+            <ul id="FNBP-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>FNBP</span>
+                </a>
+            </li>
+            </ul>
+        </li><!-- End FNBP Nav -->
+      @endif
 
-      <li class="nav-heading"><p><b>FGB</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#FGB-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>FGB</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="FGB-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>FGB</span>
+      @if (Auth::User()->fgb == 1)
+        <li class="nav-heading"><p><b>FGB</b></p></li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#FGB-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>FGB</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-        </ul>
-      </li><!-- End FGB Nav -->
+            <ul id="FGB-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>FGB</span>
+                </a>
+            </li>
+            </ul>
+        </li><!-- End FGB Nav -->
+      @endif
 
-      <li class="nav-heading"><p><b>AEHM</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#AEHM-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>AEHM</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="AEHM-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>AEHM</span>
+      @if(Auth::User()->aehm == 1)
+        <li class="nav-heading"><p><b>AEHM</b></p></li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#AEHM-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>AEHM</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-        </ul>
-      </li><!-- End AEHM Nav -->
+            <ul id="AEHM-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>AEHM</span>
+                </a>
+            </li>
+            </ul>
+        </li><!-- End AEHM Nav -->
+      @endif
 
-      <li class="nav-heading"><p><b>FEES</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#FEES-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>FEES</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="FEES-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>FEES</span>
+      @if (Auth::User()->fees == 1)
+        <li class="nav-heading"><p><b>FEES</b></p></li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#FEES-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>FEES</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-          </li>
-        </ul>
-      </li><!-- End FEES Nav -->
+            <ul id="FEES-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>FEES</span>
+                </a>
+            </li>
+            </ul>
+        </li><!-- End FEES Nav -->
+      @endif
+
+
 
       <li class="nav-heading"><p><b>Account Setting</b></p></li>
       <li class="nav-item">
@@ -140,96 +157,111 @@
         </ul>
       </li><!-- End User Setting Nav -->
 
-      <li class="nav-heading"><p><b>Kolkata Centre</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#Kolkata-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Kolkata Centre</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="Kolkata-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Change Password</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End User Kolkata Nav -->
+        @if (Auth::User()->kolkata == 1)
+            <li class="nav-heading"><p><b>Kolkata Centre</b></p></li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Kolkata-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Kolkata Centre</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Kolkata-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="components-alerts.html">
+                    <i class="bi bi-circle"></i><span>Change Password</span>
+                    </a>
+                </li>
+                </ul>
+            </li><!-- End User Kolkata Nav -->
+        @endif
 
-      <li class="nav-heading"><p><b>Kakinada Centre</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#Kakinada-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Kakinada Centre</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="Kakinada-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Change Password</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End User Kakinada Nav -->
+        @if (Auth::User()->kakinada == 1)
+            <li class="nav-heading"><p><b>Kakinada Centre</b></p></li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Kakinada-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Kakinada Centre</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Kakinada-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="components-alerts.html">
+                    <i class="bi bi-circle"></i><span>Change Password</span>
+                    </a>
+                </li>
+                </ul>
+            </li><!-- End User Kakinada Nav -->
+        @endif
 
-
-      <li class="nav-heading"><p><b>Rohtak Centre</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#Rohtak-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Rohtak Centre</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="Rohtak-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Change Password</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End User Rohtak Nav -->
-
-      <li class="nav-heading"><p><b>Powerkheda Centre</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#Powerkheda-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Powerkheda Centre</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="Powerkheda-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Change Password</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End User Powerkheda Nav -->
-
-      <li class="nav-heading"><p><b>Motipur Centre</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#Motipur-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Motipur Centre</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="Motipur-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Change Password</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End User Motipur Nav -->
+        @if(Auth::User()->rohtak == 1)
+            <li class="nav-heading"><p><b>Rohtak Centre</b></p></li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Rohtak-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Rohtak Centre</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Rohtak-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="components-alerts.html">
+                    <i class="bi bi-circle"></i><span>Change Password</span>
+                    </a>
+                </li>
+                </ul>
+            </li><!-- End User Rohtak Nav -->
+        @endif
 
 
-      <li class="nav-heading"><p><b>Special User</b></p></li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#user-role-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Special User</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="user-role-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>All Details</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>All Report</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End User Setting Nav -->
+        @if (Auth::User()->powerkheda == 1)
+            <li class="nav-heading"><p><b>Powerkheda Centre</b></p></li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Powerkheda-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Powerkheda Centre</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Powerkheda-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="components-alerts.html">
+                    <i class="bi bi-circle"></i><span>Change Password</span>
+                    </a>
+                </li>
+                </ul>
+            </li><!-- End User Powerkheda Nav -->
+        @endif
+
+
+
+        @if (Auth::User()->motipur == 1)
+            <li class="nav-heading"><p><b>Motipur Centre</b></p></li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#Motipur-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Motipur Centre</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="Motipur-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="components-alerts.html">
+                    <i class="bi bi-circle"></i><span>Change Password</span>
+                    </a>
+                </li>
+                </ul>
+            </li><!-- End User Motipur Nav -->
+        @endif
+
+            @if (Auth::User()->special == 1)
+            <li class="nav-heading"><p><b>Special User</b></p></li>
+              <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#user-role-nav" data-bs-toggle="collapse" href="#">
+                  <i class="bi bi-menu-button-wide"></i><span>Special User</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="user-role-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                  <li>
+                    <a href="components-alerts.html">
+                      <i class="bi bi-circle"></i><span>All Details</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="components-alerts.html">
+                      <i class="bi bi-circle"></i><span>All Report</span>
+                    </a>
+                  </li>
+                </ul>
+              </li><!-- End User Setting Nav -->
+            @endif
+
+
 
     </ul>
 

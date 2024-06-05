@@ -46,6 +46,7 @@ class DivisionController extends Controller
 
         $data = new Division();
         $data->division_name = $request->division_name;
+        $data->div_email = $request->div_email;
 
         $data->save();
 
@@ -100,6 +101,8 @@ class DivisionController extends Controller
         ]);
 
         $data->division_name = $request->division_name;
+        $data->div_email = $request->div_email;
+
         $data->status = $request->status;
 
         $data->save();

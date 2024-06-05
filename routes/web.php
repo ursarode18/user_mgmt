@@ -37,6 +37,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('/admin')->group(function(){
         Route::controller(UserController::class)->group(function(){
             Route::get('show-admin','index')->name('admin-show');
+            Route::get('create-admin','create')->name('admin-create');
+            Route::post('store-admin','store')->name('admin-store');
+            Route::get('edit-admin/{id}','edit')->name('admin-edit');
+            Route::post('upd-admin/{id}','update')->name('admin-upd');
+            Route::get('del-admin/{id}','destroy')->name('admin-del');
         });
     });
 

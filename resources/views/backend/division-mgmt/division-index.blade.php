@@ -18,6 +18,7 @@
                                     <tr class="bg-success text-white">
                                         <th>SL</th>
                                         <th>Division Name</th>
+                                        <th>Division Email</th>
                                         <th>Status</th>
                                         <th>Created At</th>
                                         <th>Action</th>
@@ -35,6 +36,9 @@
                                                     Active
                                                 @endif
                                             </span></td>
+                                            <td>
+                                               {{  $data->div_email }}
+                                            </td>
                                             <td>{{ $data->created_at }}</td>
                                             <td>
                                                 <a href="{{ route('division-edit',$data->id) }}" class="btn btn-warning btn-sm"> <i class="bi bi-pencil-square"></i> </a>

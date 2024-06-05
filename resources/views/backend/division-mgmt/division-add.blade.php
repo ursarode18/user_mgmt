@@ -24,6 +24,14 @@
                                     <p class="text-danger">{{ $message }}</p>
                                 @enderror
                             </div>
+
+                            <div class="mb-3">
+                                <label for="div_email" class="form-label">Division Email</label>
+                                <input type="email" class="form-control" id="div_email" name="div_email" placeholder="Enter Division Email" autofocus>
+                                @error('div_email')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
+                            </div>
                             <div class="mb-3">
                                 <input type="submit" value="Submit" class="btn btn-success">
                             </div>
