@@ -172,4 +172,26 @@ class UserController extends Controller
             return redirect()->route('admin-show')->with('msg','User name deleted successfully !!');
         }
     }
+
+    public function pwdChange($id){
+        $data = User::findOrFail($id);
+        return view('backend.user-mgmt.user-pwd-upd',compact('data'));
+    }
+
+    public function pwdStore(Request $request, $id){
+
+        $data = User::findOrFail($id);
+
+        //dd($request->all());
+        $request->validate([
+            'password' => 'required',
+            'confirm_password' => 'required|same:password',
+        ]);
+
+        $data->password = Hash::make($request->password);
+
+        $data->update();
+
+        return redirect()->back()->with('msg','Password changed successfully !!');
+    }
 }

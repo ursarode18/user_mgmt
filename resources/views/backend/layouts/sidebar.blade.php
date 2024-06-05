@@ -150,7 +150,7 @@
         </a>
         <ul id="user-act-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="components-alerts.html">
+            <a href="{{ route('user-pwd', Auth::User()->id) }}">
               <i class="bi bi-circle"></i><span>Change Password</span>
             </a>
           </li>

@@ -42,6 +42,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
             Route::get('edit-admin/{id}','edit')->name('admin-edit');
             Route::post('upd-admin/{id}','update')->name('admin-upd');
             Route::get('del-admin/{id}','destroy')->name('admin-del');
+            Route::get('pwd-user/{id}','pwdChange')->name('user-pwd'); //user-pwd-change
+            Route::post('user-pwd-change/{id}','pwdStore')->name('user-pwd-change'); //user-pwd-change
         });
     });
 
